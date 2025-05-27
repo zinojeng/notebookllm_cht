@@ -1,0 +1,67 @@
+# NotebookLM 中文 Podcast 處理器 - 預設配置
+
+# 音頻處理設定
+audio:
+  input_format: ["wav"]
+  output_format: "wav"
+  sample_rate: 16000
+  channels: 1
+  quality: "standard"
+
+# 語音識別設定
+whisper:
+  model: "base"  # tiny, base, small, medium, large
+  language: "en"
+  word_timestamps: true
+  temperature: 0.0
+
+# 翻譯設定
+translation:
+  provider: "google"  # google, deepl, azure
+  source_language: "en"
+  target_language: "zh-tw"
+  preserve_dialogue: true
+  enhance_naturalness: true
+
+# 語音合成設定
+tts:
+  provider: "edge"  # edge, openai, google, elevenlabs
+  voices:
+    female: "zh-TW-HsiaoChenNeural"
+    male: "zh-TW-YunJheNeural"
+  speech_rate: 1.0
+  speech_pitch: 0
+  add_pauses: true
+  prosody_adjustment: true
+
+# 對話分析設定
+dialogue:
+  speaker_detection: true
+  dialogue_enhancement: true
+  natural_flow: true
+  pause_duration:
+    short: 300  # ms
+    medium: 500  # ms
+    long: 1000  # ms
+
+# 處理設定
+processing:
+  concurrent_limit: 2
+  temp_cleanup: true
+  progress_reporting: true
+  error_recovery: true
+
+# 輸出設定
+output:
+  create_transcript: true
+  create_segments: true
+  create_report: true
+  timestamp_format: "seconds"
+
+# 日誌設定
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  file_logging: true
+  console_logging: true
+  max_log_size: "10MB"
+  backup_count: 5 

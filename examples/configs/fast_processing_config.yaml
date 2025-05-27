@@ -1,0 +1,78 @@
+# NotebookLM 中文 Podcast 處理器 - 快速處理配置
+
+# 音頻處理設定
+audio:
+  input_format: ["wav"]
+  output_format: "wav"
+  sample_rate: 16000
+  channels: 1
+  quality: "fast"
+
+# 語音識別設定
+whisper:
+  model: "tiny"  # 最小模型，最快速度
+  language: "en"
+  word_timestamps: false  # 關閉詞級時間戳
+  temperature: 0.0
+  fp16: true  # 使用半精度加速
+
+# 翻譯設定
+translation:
+  provider: "google"
+  source_language: "en"
+  target_language: "zh-tw"
+  preserve_dialogue: false  # 簡化對話處理
+  enhance_naturalness: false  # 關閉自然度增強
+  batch_translate: true  # 批次翻譯
+
+# 語音合成設定
+tts:
+  provider: "edge"
+  voices:
+    female: "zh-TW-HsiaoChenNeural"
+    male: "zh-TW-YunJheNeural"
+  speech_rate: 1.1  # 稍快語速
+  speech_pitch: 0
+  add_pauses: false  # 關閉停頓添加
+  prosody_adjustment: false  # 關閉韻律調整
+
+# 對話分析設定
+dialogue:
+  speaker_detection: false  # 簡化說話者檢測
+  dialogue_enhancement: false
+  natural_flow: false
+  pause_duration:
+    short: 200  # ms - 更短停頓
+    medium: 300  # ms
+    long: 500  # ms
+
+# 處理設定
+processing:
+  concurrent_limit: 4  # 更高並發數
+  temp_cleanup: true  # 立即清理暫存
+  progress_reporting: false  # 關閉詳細進度
+  error_recovery: false  # 簡化錯誤處理
+  skip_validation: true  # 跳過驗證步驟
+
+# 輸出設定
+output:
+  create_transcript: true
+  create_segments: false  # 不建立個別片段
+  create_report: false  # 不建立詳細報告
+  timestamp_format: "seconds"
+  minimal_output: true  # 最小輸出
+
+# 日誌設定
+logging:
+  level: "WARNING"  # 只記錄警告和錯誤
+  file_logging: false  # 關閉文件日誌
+  console_logging: true
+  max_log_size: "5MB"
+  backup_count: 2
+
+# 效能優化設定
+performance:
+  memory_optimization: true
+  cpu_optimization: true
+  io_optimization: true
+  cache_enabled: true 

@@ -1,0 +1,82 @@
+# NotebookLM 中文 Podcast 處理器 - 高品質配置
+
+# 音頻處理設定
+audio:
+  input_format: ["wav", "mp3", "m4a"]
+  output_format: "wav"
+  sample_rate: 22050  # 更高採樣率
+  channels: 1
+  quality: "high"
+
+# 語音識別設定
+whisper:
+  model: "medium"  # 使用更大的模型提升準確度
+  language: "en"
+  word_timestamps: true
+  temperature: 0.0
+  beam_size: 5  # 提升識別品質
+
+# 翻譯設定
+translation:
+  provider: "google"
+  source_language: "en"
+  target_language: "zh-tw"
+  preserve_dialogue: true
+  enhance_naturalness: true
+  context_aware: true  # 上下文感知翻譯
+
+# 語音合成設定
+tts:
+  provider: "edge"
+  voices:
+    female: "zh-TW-HsiaoChenNeural"
+    male: "zh-TW-YunJheNeural"
+  speech_rate: 0.95  # 稍慢語速提升清晰度
+  speech_pitch: 0
+  add_pauses: true
+  prosody_adjustment: true
+  emotion_enhancement: true  # 情感增強
+
+# 對話分析設定
+dialogue:
+  speaker_detection: true
+  dialogue_enhancement: true
+  natural_flow: true
+  advanced_analysis: true  # 進階對話分析
+  pause_duration:
+    short: 400  # ms - 更長停頓
+    medium: 700  # ms
+    long: 1200  # ms
+  intonation_adjustment: true
+
+# 處理設定
+processing:
+  concurrent_limit: 1  # 單線程確保品質
+  temp_cleanup: false  # 保留中間文件供檢查
+  progress_reporting: true
+  error_recovery: true
+  quality_check: true  # 品質檢查
+
+# 輸出設定
+output:
+  create_transcript: true
+  create_segments: true
+  create_report: true
+  create_detailed_analysis: true  # 詳細分析報告
+  timestamp_format: "milliseconds"
+  audio_normalization: true  # 音頻正規化
+
+# 日誌設定
+logging:
+  level: "DEBUG"  # 詳細日誌
+  file_logging: true
+  console_logging: true
+  max_log_size: "50MB"
+  backup_count: 10
+
+# 品質控制設定
+quality:
+  min_confidence: 0.8  # 最低信心度
+  audio_validation: true
+  transcript_validation: true
+  output_verification: true 

@@ -1,0 +1,73 @@
+# NotebookLM 中文 Podcast 處理器 - 環境變數配置範例
+# ================================================================
+# 複製此內容到專案根目錄的 .env 文件並填入您的實際 API 金鑰
+
+# OpenAI API 設定（用於 o1-mini 翻譯和 TTS）
+OPENAI_API_KEY=sk-your_openai_api_key_here
+OPENAI_ORG_ID=org-your_openai_org_id_here
+
+# Google Gemini API 設定（用於 Gemini 2.0 Flash Preview 翻譯）
+GEMINI_API_KEY=your_gemini_api_key_here
+GOOGLE_API_KEY=your_google_api_key_here
+
+# Google Cloud API 設定（用於翻譯和語音服務）
+GOOGLE_APPLICATION_CREDENTIALS=path/to/your/google-credentials.json
+GOOGLE_CLOUD_PROJECT_ID=your_google_project_id
+GOOGLE_TRANSLATE_API_KEY=your_google_translate_api_key
+
+# Azure Cognitive Services 設定（用於語音服務）
+AZURE_SPEECH_KEY=your_azure_speech_key
+AZURE_SPEECH_REGION=eastus
+
+# DeepL 翻譯 API 設定（高品質翻譯選項）
+DEEPL_API_KEY=your_deepl_api_key
+
+# ElevenLabs API 設定（高品質 TTS 選項）
+ELEVENLABS_API_KEY=your_elevenlabs_api_key
+
+# Hugging Face API 設定（用於開源模型）
+HUGGINGFACE_API_TOKEN=hf_your_huggingface_token
+
+# 資料庫設定（可選，用於處理記錄）
+DATABASE_URL=sqlite:///./podcast_processor.db
+
+# 應用程式基本設定
+DEBUG=false
+LOG_LEVEL=INFO
+MAX_FILE_SIZE=500MB
+TEMP_DIR=./temp
+OUTPUT_DIR=./output
+
+# 處理效能設定
+MAX_CONCURRENT_JOBS=2
+DEFAULT_LANGUAGE=zh-tw
+DEFAULT_TTS_PROVIDER=edge
+WHISPER_MODEL=base
+
+# AI 模型設定
+OPENAI_MODEL=o1-mini
+GEMINI_MODEL=gemini-2.0-flash-exp
+
+# 安全設定
+SECRET_KEY=your_secret_key_for_encryption_minimum_32_characters
+ALLOWED_HOSTS=localhost,127.0.0.1
+
+# 通知設定（可選）
+WEBHOOK_URL=https://your-webhook-url.com/notify
+SLACK_WEBHOOK_URL=https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK
+
+# 快取設定（可選，提升效能）
+REDIS_URL=redis://localhost:6379/0
+CACHE_TTL=3600
+
+# 監控設定（可選，錯誤追蹤）
+SENTRY_DSN=https://your_sentry_dsn@sentry.io/project_id
+
+# Edge TTS 設定（免費選項）
+EDGE_TTS_VOICE_FEMALE=zh-TW-HsiaoChenNeural
+EDGE_TTS_VOICE_MALE=zh-TW-YunJheNeural
+
+# 翻譯品質設定
+TRANSLATION_PROVIDER=openai  # google, deepl, azure, openai, gemini
+PRESERVE_DIALOGUE_STYLE=true
+ENHANCE_NATURALNESS=true 

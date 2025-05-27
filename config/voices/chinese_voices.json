@@ -1,0 +1,128 @@
+{
+  "description": "NotebookLM 中文 Podcast 處理器 - 中文聲音配置",
+  "version": "1.0.0",
+  "last_updated": "2024-01-31",
+  
+  "voices": {
+    "zh-TW": {
+      "description": "台灣繁體中文聲音",
+      "female": {
+        "zh-TW-HsiaoChenNeural": {
+          "name": "曉晨",
+          "description": "溫和親切的女性聲音",
+          "style": ["chat", "cheerful", "friendly"],
+          "recommended": true,
+          "quality": "high"
+        },
+        "zh-TW-HsiaoYuNeural": {
+          "name": "曉雨",
+          "description": "清新自然的女性聲音",
+          "style": ["chat", "calm", "gentle"],
+          "recommended": false,
+          "quality": "high"
+        },
+        "zh-TW-HanHanNeural": {
+          "name": "涵涵",
+          "description": "活潑可愛的女性聲音",
+          "style": ["chat", "cheerful", "excited"],
+          "recommended": false,
+          "quality": "medium"
+        }
+      },
+      "male": {
+        "zh-TW-YunJheNeural": {
+          "name": "雲哲",
+          "description": "穩重專業的男性聲音",
+          "style": ["chat", "calm", "professional"],
+          "recommended": true,
+          "quality": "high"
+        },
+        "zh-TW-HsiaoYuNeural": {
+          "name": "曉宇",
+          "description": "年輕活力的男性聲音",
+          "style": ["chat", "friendly", "energetic"],
+          "recommended": false,
+          "quality": "medium"
+        }
+      }
+    },
+    
+    "zh-CN": {
+      "description": "簡體中文聲音（備用選項）",
+      "female": {
+        "zh-CN-XiaoxiaoNeural": {
+          "name": "曉曉",
+          "description": "標準普通話女性聲音",
+          "style": ["chat", "calm", "friendly"],
+          "recommended": false,
+          "quality": "high"
+        }
+      },
+      "male": {
+        "zh-CN-YunxiNeural": {
+          "name": "雲希",
+          "description": "標準普通話男性聲音",
+          "style": ["chat", "calm", "professional"],
+          "recommended": false,
+          "quality": "high"
+        }
+      }
+    }
+  },
+  
+  "voice_mapping": {
+    "default": {
+      "female": "zh-TW-HsiaoChenNeural",
+      "male": "zh-TW-YunJheNeural"
+    },
+    "high_quality": {
+      "female": "zh-TW-HsiaoChenNeural",
+      "male": "zh-TW-YunJheNeural"
+    },
+    "fast_processing": {
+      "female": "zh-TW-HsiaoYuNeural",
+      "male": "zh-TW-HsiaoYuNeural"
+    }
+  },
+  
+  "style_settings": {
+    "chat": {
+      "speech_rate": 1.0,
+      "speech_pitch": 0,
+      "volume": 100
+    },
+    "professional": {
+      "speech_rate": 0.95,
+      "speech_pitch": -2,
+      "volume": 95
+    },
+    "friendly": {
+      "speech_rate": 1.05,
+      "speech_pitch": 2,
+      "volume": 100
+    },
+    "calm": {
+      "speech_rate": 0.9,
+      "speech_pitch": -1,
+      "volume": 90
+    }
+  },
+  
+  "prosody_marks": {
+    "pause": {
+      "short": "<break time=\"300ms\"/>",
+      "medium": "<break time=\"500ms\"/>",
+      "long": "<break time=\"1000ms\"/>"
+    },
+    "emphasis": {
+      "strong": "<emphasis level=\"strong\">",
+      "moderate": "<emphasis level=\"moderate\">",
+      "reduced": "<emphasis level=\"reduced\">"
+    },
+    "rate": {
+      "slow": "<prosody rate=\"0.8\">",
+      "normal": "<prosody rate=\"1.0\">",
+      "fast": "<prosody rate=\"1.2\">"
+    }
+  }
+} 
